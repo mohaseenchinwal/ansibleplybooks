@@ -1,0 +1,9 @@
+---
+- hosts: pen 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/sudousers/sudoers
+       dest: /etc/sudoers
+       backup: yes
+       force: yes

@@ -1,0 +1,4 @@
+- hosts: pen
+  tasks:
+  - name: Change ansible password
+    user: name=pen update_password=always password=$6$rounds=656000$cAxJHxBNNYQXP8Ey$w0xybmlG8Lo/o7HvPkh73.BZNb9OvV.VigxYzehCGC5faItxNAX6VOWm6uSE2m/Etu5oxDJToELx6VZ.HKMTD0

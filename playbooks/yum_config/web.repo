@@ -1,0 +1,10 @@
+[web-repo]
+name=yum client
+baseurl=http://repo.qaregistry.local/RHEL7_WEB_REPO
+enabled=1
+gpgcheck=1
+gpgkey=http://repo.qaregistry.local/RHEL7_WEB_REPO/RPM-GPG-KEY-redhat-beta
+       http://repo.qaregistry.local/RHEL7_WEB_REPO/RPM-GPG-KEY-redhat-legacy-former
+       http://repo.qaregistry.local/RHEL7_WEB_REPO/RPM-GPG-KEY-redhat-legacy-release
+       http://repo.qaregistry.local/RHEL7_WEB_REPO/RPM-GPG-KEY-redhat-legacy-rhx
+       http://repo.qaregistry.local/RHEL7_WEB_REPO/RPM-GPG-KEY-redhat-release

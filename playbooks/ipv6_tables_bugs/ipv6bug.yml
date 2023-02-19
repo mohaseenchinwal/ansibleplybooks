@@ -1,0 +1,9 @@
+---
+- hosts: yum 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/ipv6_tables_bugs/local.conf
+       dest: /etc/systemd/system/ip6tables.service.d/local.conf
+       backup: yes
+       force: yes

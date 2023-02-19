@@ -1,0 +1,9 @@
+---
+- hosts: DR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/snmp/snmpd
+       dest: /etc/sysconfig/snmpd
+       backup: yes
+       force: yes

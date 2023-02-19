@@ -1,0 +1,2 @@
+table lb to 10.5.202.0/24 dev bond1
+table lb to default via 10.5.202.1 dev bond1

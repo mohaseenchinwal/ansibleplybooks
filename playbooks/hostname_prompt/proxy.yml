@@ -1,0 +1,7 @@
+- hosts: name_srv
+  tasks:
+  - shell: echo http_proxy is $http_proxy
+    environment:
+      http_proxy: "http://proxy:3128"
+    register: shellout
+  - debug: var=shellout

@@ -1,0 +1,9 @@
+---
+- hosts: mailPR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/mailclinet_PR/main.cf
+       dest: /etc/postfix/main.cf
+       backup: yes
+       force: yes

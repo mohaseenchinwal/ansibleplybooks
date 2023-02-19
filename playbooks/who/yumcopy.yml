@@ -1,0 +1,9 @@
+---
+- hosts: who
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/who/whoisd.conf
+       dest: /etc/registryd/whoisd.conf
+       backup: yes
+       force: yes

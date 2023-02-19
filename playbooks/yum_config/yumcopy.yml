@@ -1,0 +1,9 @@
+---
+- hosts: PR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/yum_config/test.sh
+       dest: /root
+       backup: yes
+       force: yes

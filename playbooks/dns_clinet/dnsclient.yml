@@ -1,0 +1,9 @@
+---
+- hosts: DR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src:  /root/playbooks/dns_clinet/resolv.conf
+       dest: /etc/resolv.conf
+       backup: yes
+       force: yes

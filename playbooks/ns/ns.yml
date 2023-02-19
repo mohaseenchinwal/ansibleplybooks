@@ -1,0 +1,9 @@
+---
+- hosts: ns 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/ns/named.conf
+       dest: /etc/named.conf
+       backup: yes
+       force: yes

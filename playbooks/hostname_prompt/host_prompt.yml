@@ -1,0 +1,7 @@
+- hosts: all
+  tasks:
+  - shell: echo PS1 is $PS1
+    environment:
+      PS1: "[\h.sec:\w\$]"
+    register: shellout
+  - debug: var=shellout

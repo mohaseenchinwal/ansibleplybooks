@@ -1,0 +1,9 @@
+---
+- hosts: rem
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/proxy_setting/profile
+       dest: /etc/profile
+       backup: yes
+       force: yes

@@ -1,0 +1,9 @@
+---
+- hosts: rem 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/smtp_relay/master.cf
+       dest: /etc/postfix/master.cf
+       backup: yes
+       force: yes

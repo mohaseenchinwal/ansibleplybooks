@@ -1,0 +1,230 @@
+options {
+        directory               "/var/named";
+        dump-file               "/var/named/data/cache_dump.db";
+        statistics-file         "/var/named/data/named_stats.txt";
+        memstatistics-file      "/var/named/data/named_mem_stats.txt";
+        zone-statistics         yes;
+        transfer-format         many-answers;
+        max-transfer-time-in    120;
+        allow-transfer          { none; };
+        allow-query             { any; };
+        auth-nxdomain           no;
+        version                 "Unavailable.";
+        recursion               no;
+        listen-on-v6            { none; };
+};
+
+include "/etc/rndc.key";
+#include "/etc/named.key";
+
+controls {
+        inet * allow { 127.0.0.1; } keys {"rndckey";};
+};
+
+
+
+logging {
+
+        channel mydefault {
+                file "var/log/default.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mygeneral {
+                file "var/log/general.log" versions 20 size 20m;
+                print-time yes;
+        };
+        channel mydatabase {
+                file "var/log/database.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mysecurity {
+                file "var/log/security.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myconfig {
+                file "var/log/config.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myresolver {
+                file "var/log/resolver.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myxferin {
+                file "var/log/xferin.log" versions 20 size 20m;
+                print-time yes;
+        };
+        channel myxferout {
+                file "var/log/xferout.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mynotify {
+                file "var/log/notify.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myclient {
+                file "var/log/client.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myunmatched {
+                file "var/log/unmatched.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mynetwork {
+                file "var/log/network.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myupdate {
+                file "var/log/update.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel myqueries {
+                file "var/log/queries.log" versions 30 size 30m;
+                print-time yes;
+        };
+        channel mydispatch {
+                file "var/log/dispatch.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mydnssec {
+                file "var/log/dnssec.log" versions 20 size 20m;
+                print-time yes;
+        };
+
+        channel mylame {
+                file "var/log/lame.log" versions 20 size 20m;
+                print-time yes;
+        };
+        channel myqerr {
+                file "var/log/qerr.log" versions 20 size 20m;
+                print-time yes;
+                severity debug 2;
+        };
+
+        category default { mydefault; };
+        category general { mygeneral; };
+        category security { mysecurity; };
+        category resolver { myresolver; };
+        category xfer-in { myxferin; };
+        category xfer-out { myxferout; };
+        category notify { mynotify; };
+        category client { myclient; };
+        category unmatched { myunmatched; };
+        category network { mynetwork; };
+        category update { myupdate; };
+        category queries { myqueries; };
+        category dispatch { mydispatch; };
+        category dnssec { mydnssec; };
+        category lame-servers { mylame; };
+        category query-errors { myqerr; };
+
+};
+
+#zone "qa" {
+#        type master;
+#
+#        allow-transfer { 10.5.103.13; };        
+#        also-notify {10.5.103.11; 178.23.16.101; 178.23.16.102; };
+#        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+#        file "data/qa";
+#};
+
+zone "biz.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/biz.qa";
+};
+zone "com.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/com.qa";
+};
+
+zone "edu.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/edu.qa";
+};
+
+
+
+zone "gov.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/gov.qa";
+};
+
+zone "info.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/info.qa";
+};
+
+zone "mil.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/mil.qa";
+};
+
+zone "name.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/name.qa";
+};
+
+zone "net.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/net.qa";
+};
+
+zone "org.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/org.qa";
+};
+
+zone "xn--wgbl6a" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/xn--wgbl6a";
+};
+
+zone "sch.qa" {
+        type master;
+        allow-transfer { 10.5.103.13; };
+        also-notify {10.5.103.11;  178.23.16.101; 178.23.16.102; };
+        allow-update { 127.0.0.1; 10.5.103.10; key "rndckey"; };
+        file "data/sch.qa";
+};

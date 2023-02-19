@@ -1,0 +1,9 @@
+---
+- hosts: rem 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/yum_config/web.repo
+       dest: /etc/yum.repos.d/web.repo
+       backup: yes
+       force: yes

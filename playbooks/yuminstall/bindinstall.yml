@@ -1,0 +1,9 @@
+---
+- hosts: name_srv
+  tasks:
+   - name: install the latest version of bind from the testing repo
+     yum:
+         name: bind*
+         enablerepo: web-repo
+         state: present
+

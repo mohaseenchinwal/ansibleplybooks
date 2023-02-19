@@ -1,0 +1,9 @@
+---
+- hosts: web
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/web/server.xml
+       dest: /etc/tomcat/server.xml
+       backup: yes
+       force: yes

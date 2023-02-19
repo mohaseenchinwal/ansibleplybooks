@@ -1,0 +1,18 @@
+$ORIGIN .
+$TTL 86400      ; 1 day
+info.qa                  IN SOA  ns1.registry.qa. sendmail.to.tech.at.domains.qa. (
+                                2017050634 ; serial
+                                3600       ; refresh (1 hour)
+                                600        ; retry (10 minutes)
+                                604800     ; expire (1 week)
+                                3600       ; minimum (1 hour)
+                                )
+                        NS      a.registry.qa.
+                        NS      b.registry.qa.
+                        NS      c.registry.qa.
+                        NS      d.registry.qa.
+                        NS      f.registry.qa.
+                        NS      g.registry.qa.
+                        NS      i.registry.qa.
+$ORIGIN info.qa.
+$TTL 3600       ; 1 hour

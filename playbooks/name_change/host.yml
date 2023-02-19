@@ -1,0 +1,7 @@
+---
+- hosts: h1
+  gather_facts: no
+  remote_user:  root
+  tasks:
+    - name: Assign names to the h1
+      raw:  "hostnamectl set-hostname ctr-TEST-{{priqaregistrylocal|quote}}"

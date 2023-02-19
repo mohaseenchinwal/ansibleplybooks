@@ -1,0 +1,10 @@
+---
+- hosts: rem
+  gather_facts: False
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/ntp/chrony.conf
+       dest: /etc/chrony.conf
+       backup: yes
+       force: yes

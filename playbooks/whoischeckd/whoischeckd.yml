@@ -1,0 +1,9 @@
+---
+- hosts: who
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/whoischeckd/whoischeckd.conf
+       dest: /etc/registryd/whoischeckd.conf
+       backup: yes
+       force: yes

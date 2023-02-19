@@ -1,0 +1,9 @@
+---
+- hosts: DR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/rsync/rsyncd.secrets
+       dest: /etc/rsyncd.secrets
+       backup: yes
+       force: yes

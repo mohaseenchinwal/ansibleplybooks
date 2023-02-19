@@ -1,0 +1,9 @@
+---
+- hosts: DR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/Obs_distro/distro
+       dest: /usr/bin/distro
+       backup: yes
+       force: yes

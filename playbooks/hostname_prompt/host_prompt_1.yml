@@ -1,0 +1,9 @@
+---
+- hosts: DR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/hostname_prompt/profile
+       dest: /etc/profile
+       backup: yes
+       force: yes

@@ -1,0 +1,10 @@
+---
+- hosts: PR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/ext_routing/rule-bond1
+       dest: /etc/sysconfig/network-scripts/rule-bond1
+       backup: yes
+       force: yes
+

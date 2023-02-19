@@ -1,0 +1,9 @@
+---
+- hosts: PR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/motd/motd
+       dest: /etc/motd
+       backup: yes
+       force: yes

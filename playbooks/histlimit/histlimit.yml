@@ -1,0 +1,9 @@
+---
+- hosts: DR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/histlimit/.bashrc
+       dest: /root/.bashrc
+       backup: yes
+       force: yes

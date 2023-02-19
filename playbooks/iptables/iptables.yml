@@ -1,0 +1,9 @@
+---
+- hosts: who
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/iptables/iptables
+       dest: /etc/sysconfig/iptables
+       backup: yes
+       force: yes

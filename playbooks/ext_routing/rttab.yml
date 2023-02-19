@@ -1,0 +1,10 @@
+---
+- hosts: PR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /root/playbooks/ext_routing/rt_tables
+       dest: /etc/iproute2/rt_tables
+       backup: yes
+       force: yes
+

@@ -1,0 +1,9 @@
+---
+- hosts: PR 
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/sudo_env/.bashrc
+       dest: /home/ansible/.bashrc
+       backup: yes
+       force: yes

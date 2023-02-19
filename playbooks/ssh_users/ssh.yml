@@ -1,0 +1,9 @@
+---
+- hosts: DR
+  tasks:
+   - name: Copy a file to remote nodes
+     copy:
+       src: /home/ansible/playbooks/ssh_users/sshd_config
+       dest: /etc/ssh/sshd_config
+       backup: yes
+       force: yes
